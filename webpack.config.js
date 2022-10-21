@@ -1,9 +1,17 @@
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { DefinePlugin, ProvidePlugin } = require('webpack');
+
+const mode =
+  process.env.NODE_ENV.toLowerCase() === 'production'
+    ? 'production'
+    : 'development';
 
 module.exports = {
-  mode: 'development',
+  mode,
   entry: './src/index.tsx',
   output: {
     path: path.resolve('dist'),
@@ -38,6 +46,15 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'main.[hash].css',
+    }),
+    new DefinePlugin({
+      TEST_STR:
+        process.env.NODE_ENV.toLowerCase() === 'production'
+          ? JSON.stringify('This is the test str for production')
+          : JSON.stringify('This is the test str for development'),
+    }),
+    new ProvidePlugin({
+      _: 'lodash',
     }),
   ],
   devtool: 'source-map',
