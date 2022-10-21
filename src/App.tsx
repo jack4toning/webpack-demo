@@ -4,10 +4,12 @@ import catImg from '../public/assets/cat.jpg';
 
 interface AppProps {}
 
+const str = process.env.TEST_STR;
+
 const App: FunctionComponent<AppProps> = () => {
   return (
     <div>
-      <h1 className='case'>Hello World 1</h1>
+      <h1 className='case'>{str}</h1>
       <img src={catImg} />
     </div>
   );
