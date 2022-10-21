@@ -1,1 +1,0 @@
-{"version":3,"file":"main.134287239c620cc3f69d.css","mappings":";;;AAAA;EACE,gBAAgB;EAChB,WAAW;AACb","sources":["webpack://webpack-demo/./src/App.css"],"sourcesContent":[".case {\r\n  font-size: 100px;\r\n  color: #333;\r\n}\r\n"],"names":[],"sourceRoot":""}
