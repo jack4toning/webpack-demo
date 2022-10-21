@@ -10,7 +10,6 @@ interface AppProps {}
 const str = TEST_STR;
 // @ts-ignore: webpack providePlugin
 const id = _.uniqueId('test');
-
 const App: FunctionComponent<AppProps> = () => {
   return (
     <div>
