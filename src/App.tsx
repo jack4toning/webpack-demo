@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { FunctionComponent } from 'react';
 import './App.css';
 import catImg from '../public/assets/cat.jpg';
+import { dateStr } from './test/date/printDate';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface AppProps {}
@@ -15,7 +15,7 @@ const App: FunctionComponent<AppProps> = () => {
     <div>
       <h1 className='case'>Hello World</h1>
       <p>
-        {str} {id}
+        {str} {id} {dateStr}
       </p>
       <img src={catImg} />
     </div>
